@@ -22,12 +22,14 @@ def prep_telco(telco_df):
                               drop_first=True)
 
     telco_df = pd.concat([telco_df, dummy_df], axis=1)
-    telco_df = telco_df.drop(columns=['customer_id', 'payment_type_id', 'internet_service_type_id', 'contract_type_id', 'gender',
+    telco_df = telco_df.drop(columns=['Unnamed: 0', 'payment_type_id', 'internet_service_type_id', 'contract_type_id', 'gender',
                                       'senior_citizen', 'partner', 'dependents', 'tenure', 'phone_service', 'multiple_lines',
                                       'online_security', 'online_backup', 'device_protection', 'streaming_tv', 'streaming_movies',
                                       'paperless_billing', 'total_charges'])
     telco_df = telco_df.rename(columns=str.lower)
     return telco_df
+
+
 
 def split_data(df, stratify_col):
     '''

@@ -31,6 +31,7 @@ def get_telco_data(SQL_query, filename = 'telco.csv'):
         - writes df to csv: defaulted to telco.csv
     - outputs iris df
     """
+    
     if os.path.exists(filename): 
         df = pd.read_csv(filename)
         return df
@@ -39,4 +40,6 @@ def get_telco_data(SQL_query, filename = 'telco.csv'):
 
         df.to_csv(filename)
         return df
+    
+    
     
